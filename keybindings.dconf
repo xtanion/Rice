@@ -1,0 +1,8 @@
+[/]
+activate-window-menu=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-workspace-left=['<Shift><Super>Left']
+move-to-workspace-right=['<Shift><Super>Right']
+switch-to-workspace-left=['<Alt><Super>Left']
+switch-to-workspace-right=['<Alt><Super>Right']

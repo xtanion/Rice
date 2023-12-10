@@ -1,28 +1,25 @@
-## Packages
-I should write a shell script for this :/ but anywho,
-```
-sudo apt install git
-```
-
-## Extensions
+# Startup
 put every folder in gnome-shell to 
 ```
 ~/.local/share/gnome-shell
 ```
-## changing the panel
-
-icon-shadow: 
-```css
-#panel StIcon {
-  icon-shadow: none;
-}
+Keybaord config:
+backup
 ```
+dconf dump '/org/gnome/desktop/wm/keybindings/' > keybindings.dconf
+dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > custom-keybindings.dconf
 
-control panel (powermenu, volume) shadow:
 ```
-.icon-dropshadow {
-  icon-shadow: none;
-}
+load:
+```
+dconf load '/org/gnome/desktop/wm/keybindings/' < keybindings.dconf
+dconf load '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' <> custom-keybindings.dconf
 
 ```
 
+**Install Apps**
+```
+chmod +x install-apps.sh
+./install-apps.sh
+```
+will install: `vs-code`, `chrome`, `spotify`, 

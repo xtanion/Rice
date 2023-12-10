@@ -31,5 +31,12 @@ zsh
 chsh -s $(which zsh)
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
+# Copying gnome extensions
+cp ./gnome-shell/* ~/.local/share/gnome-shell
+# dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > custom-keybindings.dconf
+dconf load '/org/gnome/desktop/wm/keybindings/' < keybindings.dconf
 
+# Installing Orchis theme
+cd orchis-theme
+./install.sh -l --tweaks macos black -c dark --shell 44
 

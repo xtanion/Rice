@@ -1,7 +1,10 @@
 echo "Making temp directory"
 mkdir .temp
 cd .temp
-sudo apt-get install wget gpg
+sudo apt-get install -y wget gpg gnome-tweaks chrome-gnome-shell curl
+sudo apt install -y build-essential
+
+# removing snap and snapd
 
 # installing chrome
 echo "Installing Chrome"
@@ -18,25 +21,19 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt-get update && sudo apt-get install spotify-client
 
 # Installing vscode
+echo "Installing VS Code"
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt install code
 rm -f packages.microsoft.gpg
 
 rm -rf .temp
 
 # Installing zsh
+echo "Installing and chaning to ZSH"
 sudo apt install zsh -y
-zsh
 chsh -s $(which zsh)
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-# Copying gnome extensions
-cp ./gnome-shell/* ~/.local/share/gnome-shell
-# dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > custom-keybindings.dconf
-dconf load '/org/gnome/desktop/wm/keybindings/' < keybindings.dconf
-
-# Installing Orchis theme
-cd orchis-theme
-./install.sh -l --tweaks macos black -c dark --shell 44
 

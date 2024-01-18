@@ -25,3 +25,7 @@ chmod +x install-apps.sh
 ./install-apps.sh
 ```
 will install: `vs-code`, `chrome`, `spotify`, 
+
+## Removing Shadows
+
+under `gnome-shell.css` search `#panel`. Change `StIcon` & `text` shadow to `none`.

@@ -13,11 +13,17 @@ cp -r * ~/.themes
 cd ..
 
 echo "powerlevel10k for zsh"
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-echo "change ZSH_THEME=powerlevel10k/powerlevel10k"
-nano ~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
 
 echo "Copying flat-remix files"
+pwd
 sudo cp -r flat-remix-gnome/themes/Flat-Remix-Blue-Darkest /usr/share/themes
+
+echo "installing white sur icons"
+cd WhiteSur-icon-theme
+./install.
+cd ..
 
 echo "Done!"

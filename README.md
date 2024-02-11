@@ -29,3 +29,10 @@ will install: `vs-code`, `chrome`, `spotify`,
 ## Removing Shadows
 
 under `gnome-shell.css` search `#panel`. Change `StIcon` & `text` shadow to `none`.
+
+## Extensions Used
+
+- Dash to panel
+- Rounded window corner
+- Just Perfection (not necessary)
+- GS Connect

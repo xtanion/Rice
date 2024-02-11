@@ -10,7 +10,14 @@ echo "Installing flat-remix shell theme"
 cd Flat-Remix-Blue
 cp -r * ~/.themes
 
+cd ..
+
 echo "powerlevel10k for zsh"
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 echo "change ZSH_THEME=powerlevel10k/powerlevel10k"
 nano ~/.zshrc
+
+echo "Copying flat-remix files"
+sudo cp -r flat-remix-gnome/themes/Flat-Remix-Blue-Darkest /usr/share/themes
+
+echo "Done!"

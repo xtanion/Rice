@@ -779,7 +779,7 @@ var Preview = GObject.registerClass({
 
         if (closeButtonHeight > maxCloseButtonSize) {
             closeButtonHeight = maxCloseButtonSize;
-            closeButton.set_size(closeButtonHeight, closeButtonHeight);
+            closeButton.set_size(0, 0);
         }
 
         if (!headerHeight) {
@@ -792,12 +792,12 @@ var Preview = GObject.registerClass({
             }
         }
 
-        setStyle(
-            this._closeButtonBin,
-            'padding: ' + (headerHeight ? Math.round((headerHeight - closeButtonHeight) * .5 / scaleFactor) : 4) + 'px;' +
-            this._getBackgroundColor(HEADER_COLOR_OFFSET, headerHeight ? 1 : .6) +
-            closeButtonBorderRadius
-        );
+        // setStyle(
+        //     this._closeButtonBin,
+        //     'padding: ' + (headerHeight ? Math.round((headerHeight - closeButtonHeight) * .5 / scaleFactor) : 4) + 'px;' +
+        //     this._getBackgroundColor(HEADER_COLOR_OFFSET, headerHeight ? 1 : .6) +
+        //     closeButtonBorderRadius
+        // );
     }
 
     assignWindow(window, animateSize) {
@@ -851,7 +851,7 @@ var Preview = GObject.registerClass({
     }
 
     setFocus(focused) {
-        this._hideOrShowCloseButton(!focused);
+        this._hideOrShowCloseButton(focused);
         setStyle(this, this._getBackgroundColor(FOCUSED_COLOR_OFFSET, focused ? '-' : 0));
 
         if (focused) {
@@ -991,9 +991,9 @@ var Preview = GObject.registerClass({
     }
 
     _hideOrShowCloseButton(hide) {
-        if (this._needsCloseButton) {
-            Utils.animate(this._closeButtonBin, getTweenOpts({ opacity: hide ? 0 : 255 }));
-        }
+        // if (this._needsCloseButton) {
+        //     Utils.animate(this._closeButtonBin, getTweenOpts({ opacity: hide ? 0 : 255 }));
+        // }
     }
 
     _getBackgroundColor(offset, alpha) {

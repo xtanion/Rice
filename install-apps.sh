@@ -31,4 +31,16 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
+
+
+# Installing 
+echo "Installing Codium"
+wget https://github.com/VSCodium/vscodium/releases/download/1.85.2.24019/codium_1.85.2.24019_amd64.deb
+sudo dpkg -i codium_1.85.2.24019_amd64.deb
+
+# Installing Obsidian 
+echo "Installing Obsidian"
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/obsidian_1.5.3_amd64.deb
+sudo dpkg -i obsidian_1.5.3_amd64.deb
+
 rm -rf .temp

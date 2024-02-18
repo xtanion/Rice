@@ -43,4 +43,7 @@ echo "Installing Obsidian"
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/obsidian_1.5.3_amd64.deb
 sudo dpkg -i obsidian_1.5.3_amd64.deb
 
+echo "Installing kitty"
+sudo apt install kitty
+
 rm -rf .temp
